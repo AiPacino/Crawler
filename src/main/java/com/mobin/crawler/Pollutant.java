@@ -15,7 +15,7 @@ public class Pollutant implements PageProcessor{
     @Override
     public void process(Page page) {
         Html html = page.getHtml();
-        for (int i = 1; i<= 13; i ++) {
+        for (int i = 1; i<= 14; i ++) {
             System.out.println(html.xpath("//table[@class='tblNormal']/tbody/tr["+i+"]/allText()"));
         }
     }

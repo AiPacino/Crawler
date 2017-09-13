@@ -1,0 +1,90 @@
+2017-09-12 11:07:04,368 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:07:04,381 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:09:28,310 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:09:28,318 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:09:39,726 WARN  [pool-1-thread-1] downloader.HttpClientDownloader: download page http://www.weather.com.cn/weathern/102010100.shtml error
+java.net.UnknownHostException: www.weather.com.cn
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$1.lookupAllHostAddr(InetAddress.java:901)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1293)
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1246)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1162)
+	at java.net.InetAddress.getAllByName(InetAddress.java:1098)
+	at org.apache.http.impl.conn.SystemDefaultDnsResolver.resolve(SystemDefaultDnsResolver.java:44)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:101)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:314)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:363)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:186)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:92)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:408)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:322)
+	at us.codecraft.webmagic.selector.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2017-09-12 11:09:58,212 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:09:58,277 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:11:03,538 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:11:03,548 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:11:57,386 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:11:57,396 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:13:31,429 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:13:31,436 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:15:53,304 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:15:53,312 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:16:24,843 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:16:24,850 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:16:37,985 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:16:37,995 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:16:55,337 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:16:55,346 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:17:23,503 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:17:23,512 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:17:41,619 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:17:41,627 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:19:44,083 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:19:44,090 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 11:21:43,671 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:21:43,680 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weather/512270100.shtml
+2017-09-12 11:22:10,165 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:22:10,174 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weather/512270100.shtml
+2017-09-12 11:24:18,328 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:24:18,371 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weather/305010100.shtml
+2017-09-12 11:25:21,309 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:25:21,318 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/305010100.shtml
+2017-09-12 11:25:55,767 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:25:55,775 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/305010100.shtml
+2017-09-12 11:36:48,038 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:36:48,049 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/305010100.shtml
+2017-09-12 11:38:28,139 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:38:28,148 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/305010100.shtml
+2017-09-12 11:39:06,987 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:39:06,995 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/305010100.shtml
+2017-09-12 11:43:45,175 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:43:45,184 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/305010100.shtml
+2017-09-12 11:44:06,631 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:44:06,642 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/305010100.shtml
+2017-09-12 11:44:25,636 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:44:25,645 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/305010100.shtml
+2017-09-12 11:45:17,656 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 11:45:17,663 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 17:44:09,295 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 17:44:09,322 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 17:48:59,725 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 17:48:59,734 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 17:54:28,502 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 17:54:28,514 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 17:55:02,204 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 17:55:02,338 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 18:02:06,220 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 18:02:06,230 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 18:02:31,763 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 18:02:31,774 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-12 18:03:08,617 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-12 18:03:08,623 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml

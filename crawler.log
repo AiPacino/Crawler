@@ -1,0 +1,408 @@
+2017-09-13 09:46:52,418 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 09:46:52,426 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 09:48:33,010 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 09:48:33,019 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 09:49:15,868 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 09:49:15,880 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 09:50:07,899 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 09:50:07,907 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 10:04:30,047 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 10:04:30,052 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 10:06:21,129 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 10:06:21,138 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/113010100.shtml
+2017-09-13 10:06:21,150 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/112010100.shtml
+2017-09-13 10:06:28,474 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/138010100.shtml
+2017-09-13 10:06:28,474 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/115010100.shtml
+2017-09-13 10:06:33,790 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/157030100.shtml
+2017-09-13 10:06:33,796 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/132010100.shtml
+2017-09-13 10:06:38,967 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/106010100.shtml
+2017-09-13 10:06:38,973 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 10:06:44,093 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/103010100.shtml
+2017-09-13 10:06:44,127 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/136010101.shtml
+2017-09-13 10:06:49,236 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/111010101.shtml
+2017-09-13 10:06:49,243 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/233370100.shtml
+2017-09-13 10:06:54,367 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/201010100.shtml
+2017-09-13 10:06:54,874 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/202010100.shtml
+2017-09-13 10:06:59,483 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/206010100.shtml
+2017-09-13 10:07:00,486 WARN  [pool-1-thread-2] downloader.HttpClientDownloader: download page http://www.weather.com.cn/weathern/206010100.shtml error
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:152)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:136)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:152)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:270)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:260)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.http.impl.conn.CPoolProxy.invoke(CPoolProxy.java:138)
+	at com.sun.proxy.$Proxy2.receiveResponseHeader(Unknown Source)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:271)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:254)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:186)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:92)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:408)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:322)
+	at us.codecraft.webmagic.selector.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2017-09-13 10:07:05,524 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/206010100.shtml
+2017-09-13 10:08:14,085 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 10:08:14,094 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 10:08:53,781 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 10:08:53,790 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 10:10:43,264 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 10:10:43,272 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 10:11:14,183 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 10:11:14,196 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 10:11:15,657 WARN  [pool-1-thread-1] downloader.HttpClientDownloader: download page http://www.weather.com.cn/weathern/102010100.shtml error
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:152)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:136)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:152)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:270)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:260)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.http.impl.conn.CPoolProxy.invoke(CPoolProxy.java:138)
+	at com.sun.proxy.$Proxy2.receiveResponseHeader(Unknown Source)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:271)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:254)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:186)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:92)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:408)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:322)
+	at us.codecraft.webmagic.selector.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2017-09-13 10:11:20,685 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 10:12:21,902 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 10:12:21,911 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 10:12:59,573 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 10:12:59,581 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 10:13:14,898 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 10:13:14,908 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/112010100.shtml
+2017-09-13 10:13:14,908 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/113010100.shtml
+2017-09-13 10:13:22,230 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/138010100.shtml
+2017-09-13 10:13:22,230 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/115010100.shtml
+2017-09-13 10:13:27,483 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/157030100.shtml
+2017-09-13 10:13:27,526 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/132010100.shtml
+2017-09-13 10:13:28,487 WARN  [pool-1-thread-1] downloader.HttpClientDownloader: download page http://www.weather.com.cn/weathern/157030100.shtml error
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:152)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:136)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:152)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:270)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:260)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.http.impl.conn.CPoolProxy.invoke(CPoolProxy.java:138)
+	at com.sun.proxy.$Proxy2.receiveResponseHeader(Unknown Source)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:271)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:254)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:186)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:92)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:408)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:322)
+	at us.codecraft.webmagic.selector.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2017-09-13 10:13:32,706 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/106010100.shtml
+2017-09-13 10:13:33,492 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 10:13:37,883 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/103010100.shtml
+2017-09-13 10:13:38,632 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/136010101.shtml
+2017-09-13 10:13:43,991 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/111010101.shtml
+2017-09-13 10:13:44,524 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/233370100.shtml
+2017-09-13 10:13:49,205 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/201010100.shtml
+2017-09-13 10:13:49,707 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/202010100.shtml
+2017-09-13 10:13:54,408 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/206010100.shtml
+2017-09-13 10:13:54,848 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/157030100.shtml
+2017-09-13 11:40:08,335 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 11:40:08,384 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/138010100.shtml
+2017-09-13 11:40:08,385 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/113010100.shtml
+2017-09-13 11:40:08,385 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/112010100.shtml
+2017-09-13 11:40:08,384 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/157030100.shtml
+2017-09-13 11:40:08,384 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/115010100.shtml
+2017-09-13 11:40:16,991 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/132010100.shtml
+2017-09-13 11:40:16,994 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/106010100.shtml
+2017-09-13 11:40:16,994 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 11:40:16,995 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/103010100.shtml
+2017-09-13 11:40:16,995 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/136010101.shtml
+2017-09-13 11:40:22,232 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/111010101.shtml
+2017-09-13 11:40:22,244 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/233370100.shtml
+2017-09-13 11:40:22,253 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/201010100.shtml
+2017-09-13 11:40:22,269 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/202010100.shtml
+2017-09-13 11:40:22,278 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/206010100.shtml
+2017-09-13 12:02:01,761 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 12:02:01,770 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 12:08:01,348 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 12:08:01,355 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 12:08:03,311 ERROR [pool-1-thread-1] common.DatabaseConnection: 数据库连接失败！java.lang.ClassNotFoundException: org.postgres.Driver
+2017-09-13 12:08:03,313 ERROR [pool-1-thread-1] webmagic.Spider: process request Request{url='http://www.weather.com.cn/weathern/102010100.shtml', method='null', extras={statusCode=200}, priority=0} error
+java.lang.NullPointerException
+	at com.mobin.CrawlerTest$1.process(CrawlerTest.java:67)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:420)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:322)
+	at us.codecraft.webmagic.selector.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2017-09-13 12:09:43,595 ERROR [main] common.DatabaseConnection: 数据库连接失败！java.lang.ClassNotFoundException: org.postgres.Driver
+2017-09-13 12:10:21,308 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 12:10:21,317 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 12:11:38,028 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 12:11:38,043 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 14:36:45,290 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 14:36:45,298 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 14:50:40,973 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 14:50:40,980 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 14:50:42,787 ERROR [pool-1-thread-1] webmagic.Spider: process request Request{url='http://www.weather.com.cn/weathern/102010100.shtml', method='null', extras={statusCode=200}, priority=0} error
+java.lang.NullPointerException
+	at com.mobin.CrawlerTest$1.process(CrawlerTest.java:87)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:420)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:322)
+	at us.codecraft.webmagic.selector.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2017-09-13 14:52:25,528 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 14:52:25,537 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 14:53:13,786 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 14:53:13,792 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 14:56:32,573 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 14:56:32,581 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 15:42:33,723 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 15:42:33,732 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/113010100.shtml
+2017-09-13 15:43:49,234 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 15:43:49,242 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/113010100.shtml
+2017-09-13 15:44:40,536 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 15:44:40,545 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/113010100.shtml
+2017-09-13 15:45:35,793 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 15:45:35,804 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/113010100.shtml
+2017-09-13 15:45:35,806 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/112010100.shtml
+2017-09-13 15:45:35,807 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/138010100.shtml
+2017-09-13 15:45:35,809 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/115010100.shtml
+2017-09-13 15:45:35,811 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/157030100.shtml
+2017-09-13 15:45:37,404 WARN  [pool-1-thread-4] downloader.HttpClientDownloader: download page http://www.weather.com.cn/weathern/115010100.shtml error
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:152)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:136)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:152)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:270)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:260)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.http.impl.conn.CPoolProxy.invoke(CPoolProxy.java:138)
+	at com.sun.proxy.$Proxy2.receiveResponseHeader(Unknown Source)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:271)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:254)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:186)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:92)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:408)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:322)
+	at us.codecraft.webmagic.selector.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2017-09-13 15:45:38,606 ERROR [pool-1-thread-1] webmagic.Spider: process request Request{url='http://www.weather.com.cn/weathern/113010100.shtml', method='null', extras={statusCode=200}, priority=0} error
+java.lang.NullPointerException
+	at org.postgresql.core.v3.QueryExecutorImpl.sendQuery(QueryExecutorImpl.java:1341)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:458)
+	at org.postgresql.jdbc.PgStatement.executeBatch(PgStatement.java:791)
+	at org.postgresql.jdbc.PgPreparedStatement.executeBatch(PgPreparedStatement.java:1563)
+	at com.mobin.crawler.Capital.insertTopostgres(Capital.java:81)
+	at com.mobin.crawler.Capital.process(Capital.java:41)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:420)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:322)
+	at us.codecraft.webmagic.selector.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2017-09-13 15:45:38,621 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/132010100.shtml
+2017-09-13 15:45:38,704 INFO  [pool-1-thread-6] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/106010100.shtml
+2017-09-13 15:45:38,803 ERROR [pool-1-thread-1] crawler.Capital: 数据插入失败！org.postgresql.util.PSQLException: This connection has been closed.
+2017-09-13 15:45:38,902 ERROR [pool-1-thread-6] crawler.Capital: 数据插入失败！org.postgresql.util.PSQLException: This connection has been closed.
+2017-09-13 15:45:42,435 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 15:45:42,594 ERROR [pool-1-thread-4] crawler.Capital: 数据插入失败！org.postgresql.util.PSQLException: This connection has been closed.
+2017-09-13 15:45:43,623 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/103010100.shtml
+2017-09-13 15:45:43,762 ERROR [pool-1-thread-2] crawler.Capital: 数据插入失败！org.postgresql.util.PSQLException: This connection has been closed.
+2017-09-13 15:45:43,805 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/136010101.shtml
+2017-09-13 15:45:43,903 INFO  [pool-1-thread-6] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/111010101.shtml
+2017-09-13 15:45:43,951 ERROR [pool-1-thread-1] crawler.Capital: 数据插入失败！org.postgresql.util.PSQLException: This connection has been closed.
+2017-09-13 15:45:44,034 ERROR [pool-1-thread-6] crawler.Capital: 数据插入失败！org.postgresql.util.PSQLException: This connection has been closed.
+2017-09-13 15:48:14,522 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 15:48:14,531 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/138010100.shtml
+2017-09-13 15:48:14,531 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/157030100.shtml
+2017-09-13 15:48:14,531 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/115010100.shtml
+2017-09-13 15:48:14,532 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/112010100.shtml
+2017-09-13 15:48:14,531 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/113010100.shtml
+2017-09-13 15:48:22,010 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/132010100.shtml
+2017-09-13 15:48:22,011 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/106010100.shtml
+2017-09-13 15:48:22,011 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 15:48:22,012 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/103010100.shtml
+2017-09-13 15:48:22,012 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/136010101.shtml
+2017-09-13 15:48:27,168 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/111010101.shtml
+2017-09-13 15:48:27,200 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/233370100.shtml
+2017-09-13 15:48:27,200 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/201010100.shtml
+2017-09-13 15:48:27,212 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/202010100.shtml
+2017-09-13 15:48:27,238 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/206010100.shtml
+2017-09-13 16:11:14,326 INFO  [main] main.Crawler: Starting data crawler,CrawlerOptions：[type=capital,threadNum=5]
+2017-09-13 16:11:14,327 INFO  [main] common.CrawlerOptions: 开始爬取世界各首都的天气情况。
+2017-09-13 16:11:15,649 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 16:11:15,657 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/157030100.shtml
+2017-09-13 16:11:15,657 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/112010100.shtml
+2017-09-13 16:11:15,657 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/113010100.shtml
+2017-09-13 16:11:15,657 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/115010100.shtml
+2017-09-13 16:11:15,657 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/138010100.shtml
+2017-09-13 16:11:22,759 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/132010100.shtml
+2017-09-13 16:11:22,760 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/106010100.shtml
+2017-09-13 16:11:22,761 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 16:11:22,763 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/103010100.shtml
+2017-09-13 16:11:22,765 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/136010101.shtml
+2017-09-13 16:11:28,020 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/111010101.shtml
+2017-09-13 16:11:28,023 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/233370100.shtml
+2017-09-13 16:11:28,048 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/201010100.shtml
+2017-09-13 16:11:28,053 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/202010100.shtml
+2017-09-13 16:11:28,053 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/206010100.shtml
+2017-09-13 16:11:33,234 INFO  [main] common.CrawlerOptions: capital数据爬取并成功插入pg库：18870
+2017-09-13 16:12:55,428 INFO  [main] webmagic.Spider: Spider www.aqhi.gov.hk started!
+2017-09-13 16:12:55,439 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.aqhi.gov.hk/sc/aqhi/past-24-hours-pollutant-concentration.html
+2017-09-13 16:13:36,629 INFO  [main] main.Crawler: Starting data crawler,CrawlerOptions：[type=capital,pollutant,threadNum=5]
+2017-09-13 16:13:36,631 INFO  [main] common.CrawlerOptions: 开始爬取世界各首都的天气情况。
+2017-09-13 16:13:38,261 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 16:13:38,270 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/113010100.shtml
+2017-09-13 16:13:38,270 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/112010100.shtml
+2017-09-13 16:13:38,271 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/138010100.shtml
+2017-09-13 16:13:38,273 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/115010100.shtml
+2017-09-13 16:13:38,274 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/157030100.shtml
+2017-09-13 16:14:17,498 INFO  [main] main.Crawler: Starting data crawler,CrawlerOptions：[type=capital,pollutant,threadNum=5]
+2017-09-13 16:14:17,499 INFO  [main] common.CrawlerOptions: 开始爬取世界各首都的天气情况。
+2017-09-13 16:14:18,841 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 16:14:18,848 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/112010100.shtml
+2017-09-13 16:14:18,848 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/115010100.shtml
+2017-09-13 16:14:18,848 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/138010100.shtml
+2017-09-13 16:14:18,849 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/157030100.shtml
+2017-09-13 16:14:18,850 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/113010100.shtml
+2017-09-13 16:14:26,327 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/132010100.shtml
+2017-09-13 16:14:26,327 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/106010100.shtml
+2017-09-13 16:14:26,328 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/103010100.shtml
+2017-09-13 16:14:26,328 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/136010101.shtml
+2017-09-13 16:14:26,328 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 16:14:31,490 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/111010101.shtml
+2017-09-13 16:14:31,495 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/233370100.shtml
+2017-09-13 16:14:31,498 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/201010100.shtml
+2017-09-13 16:14:31,628 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/202010100.shtml
+2017-09-13 16:14:31,679 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/206010100.shtml
+2017-09-13 16:14:36,865 INFO  [main] common.CrawlerOptions: capital,pollutant数据爬取并成功插入pg库：19277
+2017-09-13 16:14:36,897 INFO  [main] webmagic.Spider: Spider www.aqhi.gov.hk started!
+2017-09-13 16:14:36,902 INFO  [pool-2-thread-1] downloader.HttpClientDownloader: downloading page http://www.aqhi.gov.hk/sc/aqhi/past-24-hours-pollutant-concentration.html
+2017-09-13 16:27:53,996 INFO  [main] main.Crawler: Starting data crawler,CrawlerOptions：[type=capital,pollutant,threadNum=5]
+2017-09-13 16:27:53,997 INFO  [main] common.CrawlerOptions: 开始爬取世界各首都的天气情况。
+2017-09-13 16:27:55,493 INFO  [main] webmagic.Spider: Spider www.weather.com.cn started!
+2017-09-13 16:27:55,507 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/113010100.shtml
+2017-09-13 16:27:55,546 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/112010100.shtml
+2017-09-13 16:27:55,548 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/138010100.shtml
+2017-09-13 16:27:55,549 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/115010100.shtml
+2017-09-13 16:27:55,550 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/157030100.shtml
+2017-09-13 16:27:56,936 WARN  [pool-1-thread-2] downloader.HttpClientDownloader: download page http://www.weather.com.cn/weathern/112010100.shtml error
+java.net.SocketTimeoutException: Read timed out
+	at java.net.SocketInputStream.socketRead0(Native Method)
+	at java.net.SocketInputStream.read(SocketInputStream.java:152)
+	at java.net.SocketInputStream.read(SocketInputStream.java:122)
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:136)
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:152)
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:270)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:140)
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:57)
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:260)
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:161)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.apache.http.impl.conn.CPoolProxy.invoke(CPoolProxy.java:138)
+	at com.sun.proxy.$Proxy0.receiveResponseHeader(Unknown Source)
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:271)
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:123)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:254)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:186)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:106)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:92)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:408)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:322)
+	at us.codecraft.webmagic.selector.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at java.lang.Thread.run(Thread.java:745)
+2017-09-13 16:28:01,964 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/132010100.shtml
+2017-09-13 16:28:03,144 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/106010100.shtml
+2017-09-13 16:28:03,144 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/102010100.shtml
+2017-09-13 16:28:03,144 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/103010100.shtml
+2017-09-13 16:28:03,145 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/136010101.shtml
+2017-09-13 16:28:07,178 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/111010101.shtml
+2017-09-13 16:28:08,364 INFO  [pool-1-thread-5] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/233370100.shtml
+2017-09-13 16:28:08,386 INFO  [pool-1-thread-3] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/201010100.shtml
+2017-09-13 16:28:08,395 INFO  [pool-1-thread-4] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/202010100.shtml
+2017-09-13 16:28:08,398 INFO  [pool-1-thread-1] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/206010100.shtml
+2017-09-13 16:28:12,338 INFO  [pool-1-thread-2] downloader.HttpClientDownloader: downloading page http://www.weather.com.cn/weathern/112010100.shtml
+2017-09-13 16:28:17,533 INFO  [main] common.CrawlerOptions: capital天气数据爬取并成功插入pg库：23536
+2017-09-13 16:28:17,565 INFO  [main] common.CrawlerOptions: capital天气数据成功插入pg库中，总耗时：32
+2017-09-13 16:28:17,584 INFO  [main] webmagic.Spider: Spider www.aqhi.gov.hk started!
+2017-09-13 16:28:17,586 INFO  [pool-2-thread-1] downloader.HttpClientDownloader: downloading page http://www.aqhi.gov.hk/sc/aqhi/past-24-hours-pollutant-concentration.html

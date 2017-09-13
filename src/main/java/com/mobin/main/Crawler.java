@@ -51,16 +51,7 @@ public class Crawler {
 
     public static void run(CrawlerOptions options){
          log.info("Starting data crawler," + options);
+         options.createCrawler();
 
-         if ("capital".equals(options.type)){
-            Long startTime = System.currentTimeMillis();
-             log.info("开始爬取世界各首都的天气情况。");
-            Spider.create(new Capital()).
-                    addUrl(Config.getStringProperties("capitalURL").split(",")).
-                    thread(options.threadNum).
-                    run();
-            Long endTime = System.currentTimeMillis();
-            log.info(options.type + "爬虫总消耗时间：" + (endTime - startTime));
-        }
     }
 }

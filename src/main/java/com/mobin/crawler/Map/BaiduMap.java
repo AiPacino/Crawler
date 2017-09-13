@@ -13,7 +13,7 @@ import static com.mobin.config.Config.*;
  */
 public class BaiduMap implements PageProcessor{
     private static final String BAIDU_AK = Config.BAIDU_AK;
-    private static final String urlStr = "";
+    private static final String urlStr = null;
 
     public void process(Page page) {
         int dataSize = new JsonPathSelector("$.results[*]")

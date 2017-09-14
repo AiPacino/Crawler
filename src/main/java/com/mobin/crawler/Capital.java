@@ -62,7 +62,7 @@ public class Capital implements PageProcessor{
     }
 
     public void insertTopostgres(){
-        String sql = "INSERT INTO capital(city,time,weather,centigrade,winddirection,windrate) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO capitals(city,time,weather,centigrade,winddirection,windrate) VALUES(?,?,?,?,?,?)";
         try {
             ps = conn.prepareStatement(sql);
             for (CapitalData data: datas) {

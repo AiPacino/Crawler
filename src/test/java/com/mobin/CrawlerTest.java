@@ -7,7 +7,6 @@ import com.mobin.config.Config;
 import com.mobin.crawler.Capital;
 import com.mobin.crawler.Pollutant;
 import com.mobin.domain.CapitalData;
-import org.apache.commons.lang.ArrayUtils;
 import org.junit.Test;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
@@ -19,7 +18,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Created by Mobin on 2017/9/8.

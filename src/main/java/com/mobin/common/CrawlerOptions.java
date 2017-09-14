@@ -7,6 +7,7 @@ import org.jsoup.select.Evaluator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.processor.PageProcessor;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +21,7 @@ public class CrawlerOptions {
     public String Crawlertype = null;
     public int threadNum = 1;
     private  final HashSet<String> crawlers = new HashSet<>();
+    private PageProcessor pageProcessor;
 
     public CrawlerOptions(String[] args){
         for (int i = 0; i < args.length; i ++) {
@@ -41,25 +43,40 @@ public class CrawlerOptions {
 
     public void createCrawler(){
         if (crawlers.contains("capital")){
-            Long cstartTime = System.currentTimeMillis();
             log.info("开始爬取世界各首都的天气情况。");
             Capital capital = new Capital();
-            Spider.create(capital).
-                    addUrl(Config.getStringProperties("capitalURL").split(",")).
-                    thread(threadNum).
-                    run();
-            Long cendTime = System.currentTimeMillis();
-            log.info("capital天气数据爬取"+capital.count+"条数据并成功插入pg库：" + (cendTime - cstartTime));
-            Long istartTime = System.currentTimeMillis();
-            capital.insertTopostgres();
-            Long iendTime = System.currentTimeMillis();
-            log.info("capital天气数据成功插入pg库中，总耗时："  + (iendTime - istartTime));
+            crawlerTimeConsuming(capital,"capitalURL");
+            insertTopg(capital);
         }
 
         if (Crawlertype.contains("pollutant")){
             Spider.create(new Pollutant()).addUrl(Config.getStringProperties("pollutantURL")).run();
         }
     }
+
+
+    public void crawlerTimeConsuming(PageProcessor spider,String url){
+        Long startTime = System.currentTimeMillis();
+        Spider.create(spider).
+                addUrl(Config.getStringProperties(url).split(",")).
+                thread(threadNum).
+                run();
+        Long endTime = System.currentTimeMillis();
+        log.info("本次共爬取"+Capital.count + "条数据,耗时：" +  (endTime - startTime) + "ms");
+    }
+
+    public void insertTopg(InsertTopg insert){
+        try {
+            Long istartTime = System.currentTimeMillis();
+            insert.insertTopostgres();
+            Long iendTime = System.currentTimeMillis();
+            log.info("capital天气数据成功插入pg库中，总耗时："  + (iendTime - istartTime) + "ms");
+        }catch (Exception e){
+            log.error("数据插入失败" + e);
+        }
+    }
+
+
 
     @Override
     public String toString() {

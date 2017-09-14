@@ -2,7 +2,9 @@ package com.mobin.crawler;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.annotations.VisibleForTesting;
 import com.mobin.common.DatabaseConnection;
+import com.mobin.common.InsertTopg;
 import com.mobin.domain.CapitalData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,13 +16,15 @@ import us.codecraft.webmagic.selector.Html;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by Mobin on 2017/9/11.
  */
-public class Capital implements PageProcessor{
+public class Capital implements PageProcessor, InsertTopg{
     Logger log = LoggerFactory.getLogger(Capital.class);
     private Site site = Site.me().setCycleRetryTimes(3).setTimeOut(1000);
     private final ArrayList<CapitalData> datas = new ArrayList<>();
@@ -61,8 +65,9 @@ public class Capital implements PageProcessor{
         }
     }
 
+    @Override
     public void insertTopostgres(){
-        String sql = "INSERT INTO capitals(city,time,weather,centigrade,winddirection,windrate) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO capitals(city,time,weather,centigrade,winddirection,windrate,created_at, updated_at) VALUES(?,?,?,?,?,?,?,?)";
         try {
             ps = conn.prepareStatement(sql);
             for (CapitalData data: datas) {
@@ -72,17 +77,13 @@ public class Capital implements PageProcessor{
                 ps.setString(4,data.getCentigrade());
                 ps.setString(5,data.getWindDirection());
                 ps.setString(6,data.getWindRate());
+                ps.setTimestamp(7,new Timestamp(new Date().getTime()));
+                ps.setTimestamp(8, new Timestamp(new Date().getTime()));
                 ps.addBatch();
             }
             ps.executeBatch();
-        } catch (SQLException e) {
-            try {
-                if (conn != null) {
-                    conn.rollback();
-                }
-            } catch (SQLException e1) {
-                log.error("数据回滚失败" + e);
-            }
+        } catch (Exception e) {
+            throw  new RuntimeException(e);
         }finally {
             try {
                 ps.close();
@@ -91,6 +92,5 @@ public class Capital implements PageProcessor{
             }
 
         }
-
     }
 }

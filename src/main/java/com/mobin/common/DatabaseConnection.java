@@ -1,5 +1,6 @@
 package com.mobin.common;
 
+import com.mobin.config.Config;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,10 +13,10 @@ import java.sql.SQLException;
  */
 public class DatabaseConnection {
     Logger log = LoggerFactory.getLogger(DatabaseConnection.class);
-    private static final String DRIVER = "org.postgresql.Driver";
-    private static final String strURL = "jdbc:postgresql://localhost:5432/grab_dev";
-    private static final String USER = "postgres";
-    private static final String PASSWD = "154283";
+    private static final String DRIVER = Config.getStringProperties("Driver");
+    private static final String strURL = Config.getStringProperties("URL");
+    private static final String USER = Config.getStringProperties("USER");
+    private static final String PASSWD = Config.getStringProperties("PASSWD");
     private Connection conn;
 
     public DatabaseConnection(){

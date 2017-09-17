@@ -56,24 +56,28 @@ public class CrawlerOptions {
 
 
     public void crawlerTimeConsuming(PageProcessor spider,String url){
-        Long startTime = System.currentTimeMillis();
+        Long startTime = timestamp();
         Spider.create(spider).
                 addUrl(Config.getStringProperties(url).split(",")).
                 thread(threadNum).
                 run();
-        Long endTime = System.currentTimeMillis();
+        Long endTime = timestamp();
         log.info("本次共爬取"+Capital.count + "条数据,耗时：" +  (endTime - startTime) + "ms");
     }
 
     public void insertTopg(InsertTopg insert){
         try {
-            Long istartTime = System.currentTimeMillis();
+            Long istartTime = timestamp();
             insert.insertTopostgres();
-            Long iendTime = System.currentTimeMillis();
+            Long iendTime = timestamp();
             log.info("capital天气数据成功插入pg库中，总耗时："  + (iendTime - istartTime) + "ms");
         }catch (Exception e){
             log.error("数据插入失败" + e);
         }
+    }
+
+    public Long timestamp(){
+        return  System.currentTimeMillis();
     }
 
 

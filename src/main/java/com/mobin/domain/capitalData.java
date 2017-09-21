@@ -1,5 +1,7 @@
 package com.mobin.domain;
 
+import java.sql.Timestamp;
+
 /**
  * Created by Mobin on 2017/9/12.
  * 地区"12日09时,多云,22℃,西风,微风"
@@ -12,6 +14,8 @@ public class CapitalData{
     private String centigrade;
     private String windDirection;
     private String windRate;
+    private Timestamp created_at;
+    private Timestamp updated_at;
 
     public String getCity() {
         return city;
@@ -61,6 +65,22 @@ public class CapitalData{
         this.windRate = windRate;
     }
 
+    public Timestamp getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(Timestamp created_at) {
+        this.created_at = created_at;
+    }
+
+    public Timestamp getUpdated_at() {
+        return updated_at;
+    }
+
+    public void setUpdated_at(Timestamp updated_at) {
+        this.updated_at = updated_at;
+    }
+
     @Override
     public String toString() {
         return "CapitalData{" +
@@ -70,6 +90,8 @@ public class CapitalData{
                 ", centigrade='" + centigrade + '\'' +
                 ", windDirection='" + windDirection + '\'' +
                 ", windRate='" + windRate + '\'' +
+                ", created_at='" + created_at + '\'' +
+                ", updated_at='" + updated_at + '\'' +
                 '}';
     }
 }

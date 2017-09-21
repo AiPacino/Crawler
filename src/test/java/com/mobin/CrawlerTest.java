@@ -17,7 +17,10 @@ import us.codecraft.webmagic.selector.Html;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by Mobin on 2017/9/8.
@@ -44,15 +47,15 @@ public class CrawlerTest {
     @Test
     public void capital1(){
         final ArrayList<CapitalData> list = new ArrayList();
-        DatabaseConnection databaseConnection = new DatabaseConnection();
-        final  Connection con = databaseConnection.getConnection();
+//        DatabaseConnection databaseConnection = new DatabaseConnection();
+//        final  Connection con = databaseConnection.getConnection();
         Spider.create(new PageProcessor() {
             private Site site = Site.me().setRetryTimes(3).setTimeOut(1000);
             @Override
             public void process(Page page) {
                 Html html = page.getHtml();
-                String city = html.xpath("//div[@class='citySelect webox']/allText()").toString();
-                String str = html.getDocument().getElementsByTag("script").get(4).data().split("=")[1];
+                String city = html.xpath("//div[@class='crumbs fl']/a/allText()").toString();
+                String str = html.getDocument().getElementsByTag("script").get(2).data().split("=")[1];
                 JSONObject json = JSON.parseObject(str);
                 String s = json.getJSONArray("7d").get(1).toString().split("(\\[|\\])")[1];
                 String[] str1 = s.split(",\"");
@@ -69,47 +72,52 @@ public class CrawlerTest {
                     synchronized (list){
                         list.add(data);
                     }
-
-                }
-                String sql = "INSERT INTO capital(city,time,weather,centigrade,winddirection,windrate) VALUES(?,?,?,?,?,?)";
-                try {
-                    PreparedStatement statement = con.prepareStatement(sql);
-                    for (CapitalData data: list){
-                        statement.setString(1,data.getCity());
-                        statement.setString(2,data.getTime());
-                        statement.setString(3,data.getWeather());
-                        statement.setString(4,data.getCentigrade());
-                        statement.setString(5,data.getWindDirection());
-                        statement.setString(6,data.getWindRate());
-                        statement.addBatch();
-                    }
-                    statement.executeBatch();
-                    statement.close();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }finally {
-                    try {
-                        con.close();
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
+                    System.out.println(data);
                 }
 
-
+//                String sql = "INSERT INTO capitals(city,time,weather,centigrade,winddirection,windrate,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?)";
+//                try {
+//                    PreparedStatement statement = con.prepareStatement(sql);
+//                    for (CapitalData data: list){
+//                        statement.setString(1,data.getCity());
+//                        statement.setString(2,data.getTime());
+//                        statement.setString(3,data.getWeather());
+//                        statement.setString(4,data.getCentigrade());
+//                        statement.setString(5,data.getWindDirection());
+//                        statement.setString(6,data.getWindRate());
+//                        statement.setTimestamp(7,new Timestamp(new Date().getTime()));
+//                        statement.setTimestamp(8, new Timestamp(new Date().getTime()));
+//                        statement.addBatch();
+//                    }
+//                    statement.executeBatch();
+//                    statement.close();
+//                } catch (SQLException e) {
+//                    e.printStackTrace();
+//                }finally {
+//                    try {
+//                        con.close();
+//                    } catch (SQLException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
             }
 
             @Override
             public Site getSite() {
                 return site;
             }
-        }).addUrl("http://www.weather.com.cn/weathern/102010100.shtml").run();
+        }).addUrl("http://www.weather.com.cn/weather/101010100.shtml").run();
     }
 
     @Test
     public void rex(){
         String s = "[a,c,b]";
         System.out.println(s.split("(\\[|\\])")[1]);
-
+        Calendar calendar= Calendar.getInstance();
+        System.out.println(calendar.get(Calendar.MONTH)+ 1);
+        System.out.println(calendar.get(Calendar.YEAR));
+        System.out.println(calendar.getTime().getTime());
+        System.out.println(calendar.getTimeInMillis());
     }
 
 }

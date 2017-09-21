@@ -1,6 +1,8 @@
 package com.mobin.config;
 
 import java.io.*;
+import java.sql.Timestamp;
+import java.util.Calendar;
 import java.util.Properties;
 
 /**
@@ -12,6 +14,10 @@ public class Config {
 
     public static final String BAIDU_AK = getStringProperties("baidi_ak");
     public static final String TENCENT_AK = getStringProperties("tencent_ak");
+    public static  final  Calendar calendar= Calendar.getInstance();
+    public static  final  int YEAR = calendar.get(Calendar.YEAR);
+    public static  final  int MONTH = calendar.get(Calendar.MONTH)+ 1;
+    public static  final  Timestamp TIMESTAM = new Timestamp(calendar.getTimeInMillis());
 
     private static Properties loadConfig(){
         String confFile  = System.getProperty("Crawler"); //可以在VM启动时配置该参数：-DCrawler=路径

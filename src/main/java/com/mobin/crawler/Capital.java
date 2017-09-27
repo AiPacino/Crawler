@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.google.common.annotations.VisibleForTesting;
 import com.mobin.common.DatabaseConnection;
-import com.mobin.common.InsertTopg;
+import com.mobin.common.InsertToPg;
 import com.mobin.config.Config;
 import com.mobin.domain.CapitalData;
 import org.slf4j.Logger;
@@ -26,13 +26,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Created by Mobin on 2017/9/11.
  */
-public class Capital implements PageProcessor, InsertTopg{
+public class Capital implements PageProcessor, InsertToPg{
     Logger log = LoggerFactory.getLogger(Capital.class);
     private Site site = Site.me().setCycleRetryTimes(3).setTimeOut(1000);
     private final ArrayList<CapitalData> datas = new ArrayList<>();
     Connection conn = new DatabaseConnection().getConnection();
     PreparedStatement ps = null;
-    public static final AtomicInteger count = new AtomicInteger();
     private static boolean isBeijiang = true;
     private String city = null;
     private String weatherInfo_all = null;

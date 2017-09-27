@@ -12,6 +12,7 @@ import us.codecraft.webmagic.processor.PageProcessor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by Mobin on 2017/9/11.
@@ -27,10 +28,10 @@ public class CrawlerOptions {
         for (int i = 0; i < args.length; i ++) {
             String a = args[i];
             switch (a) {
-                case "-Crawlertype":
+                case "-CrawlerType":
                     Crawlertype = args[++ i];  //启动命令中以逗号分开来标记启动多个爬虫程序
                     break;
-                case "-threadNum":
+                case "-ThreadNum":
                     threadNum = Integer.valueOf(args[++ i]);
                     break;
                 default:
@@ -45,27 +46,31 @@ public class CrawlerOptions {
         if (crawlers.contains("capital")){
             log.info("开始爬取世界各首都的天气情况。");
             Capital capital = new Capital();
-            crawlerTimeConsuming(capital,"capitalURL");
+            crawlerTimeConsuming(capital,"capitalURL", capital.count);
             insertTopg(capital);
         }
 
         if (Crawlertype.contains("pollutant")){
-            Spider.create(new Pollutant()).addUrl(Config.getStringProperties("pollutantURL")).run();
+            log.info("开始爬取空气质量健康指数。");
+            Pollutant pollutant = new Pollutant();
+            crawlerTimeConsuming(pollutant,"pollutantURL", pollutant.count);
+            insertTopg(pollutant);
+          //  Spider.create(new Pollutant()).addUrl(Config.getStringProperties("pollutantURL")).run();
         }
     }
 
 
-    public void crawlerTimeConsuming(PageProcessor spider,String url){
+    public void crawlerTimeConsuming(PageProcessor spider, String url, AtomicInteger count){
         Long startTime = timestamp();
         Spider.create(spider).
                 addUrl(Config.getStringProperties(url).split(",")).
                 thread(threadNum).
                 run();
         Long endTime = timestamp();
-        log.info("本次共爬取"+Capital.count + "条数据,耗时：" +  (endTime - startTime) + "ms");
+        log.info("本次共爬取"+ count + "条数据,耗时：" +  (endTime - startTime) + "ms");
     }
 
-    public void insertTopg(InsertTopg insert){
+    public void insertTopg(InsertToPg insert){
         try {
             Long istartTime = timestamp();
             insert.insertTopostgres();

@@ -6,23 +6,29 @@ import java.sql.Timestamp;
  * Created by Mobin on 2017/9/24.
  */
 public class ChinaCityData {
-    private String tp;
+    private String time;
     private String weather;
     private String temperature;
-    private String rainfall;
     private String windRate;
     private String windDirection;
-    private String airPressure;
-    private String humidity;
-    private String cludeage;
-    private String visibility;
+    private String sunsup;
+    private String sunset;
+    private Timestamp created_at;
 
-    public String getTp() {
-        return tp;
+    public Timestamp getCreated_at() {
+        return created_at;
     }
 
-    public void setTp(String tp) {
-        this.tp = tp;
+    public void setCreated_at(Timestamp created_at) {
+        this.created_at = created_at;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 
     public String getWeather() {
@@ -41,14 +47,6 @@ public class ChinaCityData {
         this.temperature = temperature;
     }
 
-    public String getRainfall() {
-        return rainfall;
-    }
-
-    public void setRainfall(String rainfall) {
-        this.rainfall = rainfall;
-    }
-
     public String getWindRate() {
         return windRate;
     }
@@ -65,51 +63,34 @@ public class ChinaCityData {
         this.windDirection = windDirection;
     }
 
-    public String getAirPressure() {
-        return airPressure;
+    public String getSunsup() {
+        return sunsup;
     }
 
-    public void setAirPressure(String airPressure) {
-        this.airPressure = airPressure;
+    public void setSunsup(String sunsup) {
+        this.sunsup = sunsup;
     }
 
-    public String getHumidity() {
-        return humidity;
+    public String getSunset() {
+        return sunset;
     }
 
-    public void setHumidity(String humidity) {
-        this.humidity = humidity;
+    public void setSunset(String sunset) {
+        this.sunset = sunset;
     }
 
-    public String getCludeage() {
-        return cludeage;
-    }
-
-    public void setCludeage(String cludeage) {
-        this.cludeage = cludeage;
-    }
-
-    public String getVisibility() {
-        return visibility;
-    }
-
-    public void setVisibility(String visibility) {
-        this.visibility = visibility;
-    }
 
     @Override
     public String toString() {
         return "ChinaCityData{" +
-                "tp=" + tp +
+                "time='" + time + '\'' +
                 ", weather='" + weather + '\'' +
                 ", temperature='" + temperature + '\'' +
-                ", rainfall='" + rainfall + '\'' +
                 ", windRate='" + windRate + '\'' +
                 ", windDirection='" + windDirection + '\'' +
-                ", airPressure='" + airPressure + '\'' +
-                ", humidity='" + humidity + '\'' +
-                ", cludeage='" + cludeage + '\'' +
-                ", visibility='" + visibility + '\'' +
+                ", sunsup='" + sunsup + '\'' +
+                ", sunset='" + sunset + '\'' +
+                ", sunset='" + created_at + '\'' +
                 '}';
     }
 }

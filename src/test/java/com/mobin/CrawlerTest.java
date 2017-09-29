@@ -34,7 +34,7 @@ import java.util.Iterator;
  */
 public class CrawlerTest {
     @Test
-    public void pollutant(){
+    public void pollutant() {
         Spider.create(new Pollutant()).addUrl(Config.getStringProperties("pollutantURL").split(",")).run();
     }
 
@@ -48,21 +48,22 @@ public class CrawlerTest {
         capital.insertTopostgres();
         Long endTime = System.currentTimeMillis();
         System.out.println(capital.count);
-        System.out.println("爬虫总消耗时间：" + (endTime - startTime)+ "ms");
+        System.out.println("爬虫总消耗时间：" + (endTime - startTime) + "ms");
     }
 
     @Test
-    public void capital1(){
+    public void capital1() {
         final ArrayList<CapitalData> list = new ArrayList();
 //        DatabaseConnection databaseConnection = new DatabaseConnection();
 //        final  Connection con = databaseConnection.getConnection();
         Spider.create(new PageProcessor() {
             private Site site = Site.me().setRetryTimes(3).setTimeOut(1000);
+
             @Override
-            public   void process(Page page) {
+            public void process(Page page) {
                 Html html = page.getHtml();
                 String city = html.xpath("//div[@class='crumbs fl']/a/allText()").toString();
-              //  System.out.println(html.getDocument().getElementsByTag("script").get(4).data().split("=")[1]);
+                //  System.out.println(html.getDocument().getElementsByTag("script").get(4).data().split("=")[1]);
                 String weatherInfo_all = html.getDocument().getElementsByTag("script").get(4).data().split("=")[1];
                 JSONObject json = JSON.parseObject(weatherInfo_all);
                 System.out.println(json.get("7d"));
@@ -119,35 +120,38 @@ public class CrawlerTest {
     }
 
     @Test
-    public void chinaCity(){
+    public void chinaCity() {
         final ArrayList<CapitalData> list = new ArrayList();
 //        DatabaseConnection databaseConnection = new DatabaseConnection();
 //        final  Connection con = databaseConnection.getConnection();
         Spider.create(new PageProcessor() {
             private Site site = Site.me().setRetryTimes(3).setTimeOut(1000);
+
             @Override
-            public synchronized  void process(Page page) {
+            public synchronized void process(Page page) {
+                ChinaCityData data = new ChinaCityData();
                 Html html = page.getHtml();
-                Selectable s = html.xpath("div[@class='lv']");
-                System.out.println(html.xpath("div[@class='lv']/allText()"));
-//                String script = html.getDocument().getElementsByTag("script").get(3).data();
-//                String sunups = script.split(";")[7].split("=")[1];
-//                String sunsets = script.split(";")[7].split("=")[1];
-//                JSONArray sunupsJson = JSON.parseArray(sunups);
-//                JSONArray sunsetsJson = JSON.parseArray(sunsets);
-//                System.out.println(sunupsJson.get(0));   //日出
-//                System.out.println(sunsetsJson.get(0));   //日落
-//                String str = script.split("(=\\[)|(,\\[)")[1];
-//                JSONArray json = JSON.parseArray(str);
-//                 for(Iterator iterator = json.iterator(); iterator.hasNext();){
-//                 JSONObject ob = (JSONObject) iterator.next();
-//                 System.out.println(ob.get("jb"));  //温度
-//                 System.out.println(ob.get("ja"));  //天气现象
-//                 System.out.println(ob.get("jd"));  //风向
-//                 System.out.println(ob.get("jc"));  //风速
-//                 System.out.println(ob.get("je"));  //相对温度
-//                 System.out.println(ob.get("jf"));  //时间
-//                 }
+                String script = html.getDocument().getElementsByTag("script").get(3).data();
+                String sunups = script.split(";")[7].split("=")[1];
+                String sunsets = script.split(";")[8].split("=")[1];
+                JSONArray sunupsJson = JSON.parseArray(sunups);
+                JSONArray sunsetsJson = JSON.parseArray(sunsets);
+                String str = script.split("(=\\[)|(,\\[)")[1];
+                JSONArray json = JSON.parseArray(str);
+                Config.initWindRateMap();
+                Config.initWeatherMap();
+                Config.initWindDirectionMap();
+                for (Iterator iterator = json.iterator(); iterator.hasNext(); ) {
+                    JSONObject ob = (JSONObject) iterator.next();
+                    data.setSunsup(sunupsJson.get(0).toString());   //日出
+                    data.setSunset(sunsetsJson.get(0).toString());   //日落
+                    data.setTemperature(ob.get("jb").toString());  //温度
+                    data.setWeather(Config.weatherMap.get(Integer.parseInt(ob.get("ja").toString())));  //天气现象
+                    data.setWindDirection(Config.windDirectionMap.get(Integer.parseInt(ob.get("jd").toString())));  //风向
+                    data.setWindRate(Config.windRateMap.get(Integer.parseInt(ob.get("jc").toString())));  //风速
+                    data.setTime(ob.get("jf").toString());  //时间
+                    System.out.println(data);
+                }
             }
 
             @Override
@@ -159,33 +163,34 @@ public class CrawlerTest {
 
 
     @Test
-    public void rex(){
+    public void rex() {
         String s = "[a,c,b]";
         System.out.println(s.split("(\\[|\\])")[1]);
-        Calendar calendar= Calendar.getInstance();
-        System.out.println(calendar.get(Calendar.MONTH)+ 1);
+        Calendar calendar = Calendar.getInstance();
+        System.out.println(calendar.get(Calendar.MONTH) + 1);
         System.out.println(calendar.get(Calendar.YEAR));
         System.out.println(calendar.getTime().getTime());
         System.out.println(calendar.getTimeInMillis());
     }
 
     @Test
-    public void weather(){
+    public void weather() {
         Spider.create(new PageProcessor() {
             private Site site = Site.me().setRetryTimes(3).setTimeOut(1000);
+
             @Override
             public void process(Page page) {
                 Html html = page.getHtml();
-                 String time =  html.xpath("//div[@id='day0']/div[1]/div[2]/allText()").toString();
+                String time = html.xpath("//div[@id='day0']/div[1]/div[2]/allText()").toString();
                 /**
-                * 1 ：晴
+                 * 1 ：晴
                  * 2：阴
                  * 3：阵雨
                  * 4：雷阵雨
-                * */
-                for(int i = 2; i <= 9; i ++){
+                 * */
+                for (int i = 2; i <= 9; i++) {
                     ChinaCityData data = new ChinaCityData();
-                    data.setTp(html.xpath("//div[@id='day0']/div[1]/div["+i+"]/allText()").toString());
+                 /*   data.setTp(html.xpath("//div[@id='day0']/div[1]/div["+i+"]/allText()").toString());
                     data.setWeather( WeatherEnum.get(html.xpath("//div[@id='day0']/div[2]/div["+i+"]/img/@src").toString().split("\\/day\\/|\\.png")[1]));
                     data.setTemperature( html.xpath("//div[@id='day0']/div[3]/div["+i+"]/allText()").toString());
                     data.setRainfall( html.xpath("//div[@id='day0']/div[4]/div["+i+"]/allText()").toString());
@@ -195,7 +200,7 @@ public class CrawlerTest {
                     data.setHumidity( html.xpath("//div[@id='day0']/div[8]/div["+i+"]/allText()").toString());
                     data.setCludeage( html.xpath("//div[@id='day0']/div[9]/div["+i+"]/allText()").toString());
                     data.setVisibility( html.xpath("//div[@id='day0']/div[10]/div["+i+"]/allText()").toString());
-                    System.out.println(data);
+                    System.out.println(data);*/
                 }
 //                System.out.println(time);
 //                System.out.println(weather);
@@ -210,9 +215,10 @@ public class CrawlerTest {
     }
 
     @Test
-    public void weather1(){
+    public void weather1() {
         Spider.create(new PageProcessor() {
             private Site site = Site.me().setRetryTimes(3).setTimeOut(1000);
+
             @Override
             public void process(Page page) {
                 String s = page.getHtml().xpath("//*[@id='drawTF']/svg/text[1]/tspan").toString();

@@ -3,6 +3,7 @@ package com.mobin.common;
 import com.mobin.config.Config;
 import com.mobin.crawler.Capital;
 import com.mobin.crawler.Pollutant;
+import com.mobin.domain.ChinaCityData;
 import org.jsoup.select.Evaluator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,18 +45,27 @@ public class CrawlerOptions {
 
     public void createCrawler(){
         if (crawlers.contains("capital")){
-            log.info("开始爬取世界各首都的天气情况。");
+            log.info("开始爬取世界各首都的天气情况........................");
             Capital capital = new Capital();
             crawlerTimeConsuming(capital,"capitalURL", capital.count);
             insertTopg(capital);
         }
 
         if (Crawlertype.contains("pollutant")){
-            log.info("开始爬取空气质量健康指数。");
+            log.info("开始爬取空气质量健康指数........................");
             Pollutant pollutant = new Pollutant();
             crawlerTimeConsuming(pollutant,"pollutantURL", pollutant.count);
             insertTopg(pollutant);
           //  Spider.create(new Pollutant()).addUrl(Config.getStringProperties("pollutantURL")).run();
+        }
+
+        if (Crawlertype.contains("chinaData")){
+            log.info("对天气静态数据进行初始化........................");
+            Config.initWindRateMap();
+            Config.initWeatherMap();
+            Config.initWindDirectionMap();
+            log.info("开始爬取中国各城市的天气情况.........................");
+
         }
     }
 

@@ -1,5 +1,6 @@
 package com.mobin;
 
+import com.mobin.config.Config;
 import org.junit.Test;
 
 import java.text.DateFormat;
@@ -20,5 +21,7 @@ public class commonTest {
         calendar.setTime(df.parse("2017-09-27 14:00:00"));
         calendar.roll(Calendar.HOUR_OF_DAY, -1 );
         System.out.println(calendar.getTime());
+        Config.initWeatherMap();
+        System.out.println(Config.weatherMap.get(00));
     }
 }
